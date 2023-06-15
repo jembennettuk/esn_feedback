@@ -14,7 +14,8 @@ inputDir = './data/'    # Storage directory for input/label data
 ###
 nEpochs=5000#5000 # No optimiser iterations
 batch_size=50 # No. input samples per optimser iteration
-eta = 0.0001 # Optimser learning rate
+etaInitial = 0.0001 # Optimser learning rate for initial (e.g. metric) learning phase
+etaTransfer = 0.001 # Optimser learning rate for transfer learning phase
 eta_tau = np.Inf#5000.0 # Time constant for learning rate decay
 nClass=10 # No. classes in dataset
 tMax = 28 # No. time steps per input sample
@@ -51,7 +52,7 @@ lossLayer = 2                # Compute loss from responses in this layer (base 0
 ### Classification learning properties
 ###
 OUTsave = False         # Save output validation responses for analyses 
-nEpisodesOut = 50     # No. training batches
+nEpisodesOut = 1000     # No. training batches
 N_check = 50            # No. validation checks throughout training
 eta_out = 0.01             # Learning rate for ESN-OUT/MET-OUT weights
 out_train_method = 'dense' # Method to train output weights/thresholds [dense, sparce]
@@ -59,7 +60,7 @@ out_train_method = 'dense' # Method to train output weights/thresholds [dense, s
 ###
 ### Feedforward properties
 ###
-Ns = [N_esn, 200, 100, nClass] # No. neurons in each layer
+Ns = [N_esn, 200, 200, nClass] # No. neurons in each layer
 
 ###
 ### Readout and save properties
