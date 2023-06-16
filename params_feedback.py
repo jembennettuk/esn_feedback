@@ -67,7 +67,7 @@ Ns = [N_esn, 200, 200, nClass] # No. neurons in each layer
 ###
 outsPerTime = True # Specifiy whether use a readout weight per time point per class (True)
                     # or just one weight per class (False)
-reportTime = 25 # Real time Accuracy/Loss report every reportTime time steps
+reportTime = 250 # Real time Accuracy/Loss report every reportTime time steps
 saveLayers = [0, 1, 2] # Save responses from these layers
 saveRespAtN = [] # Save response at these time points
 nSaveMaxT = nEpochs #5000 # Save responses up to this iteration
