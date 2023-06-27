@@ -41,8 +41,9 @@ METflag = True               # Include MET layer
 METclass = 'METlin'          # MET layer model class [METlin - linear, METleaky - leaky integrator]
 METsave = True               # Save MET validation responses for analyses
 METsaveN = 100               # No. of save-points throughout MET layer training.
-metricLossType = 'tripletLoss' # Training method for metric learning [triplet; HalvagalZenke]
-nSampProto = 10              # Np. samples to compute prototypes
+# metricLossType = 'tripletLoss' # Training method for metric learning [triplet; HalvagalZenke]
+metricLossType = 'prototypicalLoss' # Training method for metric learning [triplet; HalvagalZenke]
+nSampProto = 20              # Np. samples to compute prototypes
 eta_met = 0.0001             # Learning rate for ESN-MET weights
 margin=2                     # For triplet margin loss
 maxLayer = 2                 # Do forward pass up to this layer (base 0)
@@ -68,7 +69,7 @@ Ns = [N_esn, 200, 200, nClass] # No. neurons in each layer
 ###
 outsPerTime = True # Specifiy whether use a readout weight per time point per class (True)
                     # or just one weight per class (False)
-reportTime = 25 # Real time Accuracy/Loss report every reportTime time steps
+reportTime = 500 # Real time Accuracy/Loss report every reportTime time steps
 saveLayers = [0, 1, 2] # Save responses from these layers
 saveRespAtN = [] # Save response at these time points
 nSaveMaxT = nEpochs #5000 # Save responses up to this iteration
