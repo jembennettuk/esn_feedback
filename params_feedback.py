@@ -55,6 +55,7 @@ lossLayer = 2                # Compute loss from responses in this layer (base 0
 ###
 OUTsave = False         # Save output validation responses for analyses 
 nEpisodesOut = 1000     # No. training batches
+nTransferRuns = 1       # No. instances of transfer learning per learned hidden network
 N_check = 50            # No. validation checks throughout training
 eta_out = 0.01             # Learning rate for ESN-OUT/MET-OUT weights
 out_train_method = 'dense' # Method to train output weights/thresholds [dense, sparce]
@@ -62,7 +63,7 @@ out_train_method = 'dense' # Method to train output weights/thresholds [dense, s
 ###
 ### Feedforward properties
 ###
-Ns = [N_esn, 200, 200, nClass] # No. neurons in each layer
+Ns = [N_esn, 200, 200, 50, nClass] # No. neurons in each layer
 
 ###
 ### Readout and save properties
