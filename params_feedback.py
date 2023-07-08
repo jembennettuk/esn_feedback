@@ -54,11 +54,10 @@ lossLayer = 2                # Compute loss from responses in this layer (base 0
 ### Classification learning properties
 ###
 OUTsave = False         # Save output validation responses for analyses 
-nEpisodesOut = 1000     # No. training batches
+nEpisodesOut = 2000     # No. training batches
 nTransferRuns = 1       # No. instances of transfer learning per learned hidden network
 N_check = 50            # No. validation checks throughout training
 eta_out = 0.01             # Learning rate for ESN-OUT/MET-OUT weights
-out_train_method = 'dense' # Method to train output weights/thresholds [dense, sparce]
 
 ###
 ### Feedforward properties
@@ -71,7 +70,7 @@ Ns = [N_esn, 200, 200, 50, nClass] # No. neurons in each layer
 outsPerTime = True # Specifiy whether use a readout weight per time point per class (True)
                     # or just one weight per class (False)
 reportTime = 500 # Real time Accuracy/Loss report every reportTime time steps
-saveLayers = [0, 1, 2] # Save responses from these layers
+saveLayers = [1, 2] # Save responses from these layers
 saveRespAtN = [] # Save response at these time points
 nSaveMaxT = nEpochs #5000 # Save responses up to this iteration
 nSaveSamples = 20 # No. samples to save per class
