@@ -46,9 +46,7 @@ metricLossType = 'prototypicalLoss' # Training method for metric learning [tripl
 nSampProto = 20              # Np. samples to compute prototypes
 eta_met = 0.0001             # Learning rate for ESN-MET weights
 margin=2                     # For triplet margin loss
-maxLayer = 2                 # Do forward pass up to this layer (base 0)
-lossLayer = 2                # Compute loss from responses in this layer (base 0)
-                             #   Likely best to go no higher than maxLayer
+tranFromLayer = 3            # Perform transfer learning from this layer
 
 ###
 ### Classification learning properties
