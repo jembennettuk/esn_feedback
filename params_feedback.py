@@ -25,7 +25,7 @@ tauPerf = tMax / 2 # Time scale for weighting responses for accuracy/loss
 ### ESN properties
 ###
 esnDir = '.' # Directory to store ESN response
-alpha = 0.1  # Decay rate of ESN units [0,1]
+alpha = 0.8  # Decay rate of ESN units [0,1]
 rho = 0.99   # Scale ESN-ESN weights
 gamma = 0.1  # Scale input-ESN weights
 N_av = 10    # Fan-out no. from ESN units
