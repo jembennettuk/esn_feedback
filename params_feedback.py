@@ -12,7 +12,7 @@ inputDir = './data/'    # Storage directory for input/label data
 ###
 ### Training properties
 ###
-nEpochs=5000#5000 # No optimiser iterations
+nEpisodes=5000#5000 # No optimiser iterations
 batch_size=50 # No. input samples per optimser iteration
 etaInitial = 0.0001 # Optimser learning rate for initial (e.g. metric) learning phase
 etaTransfer = 0.001 # Optimser learning rate for transfer learning phase
@@ -52,25 +52,24 @@ tranFromLayer = 3            # Perform transfer learning from this layer
 ### Classification learning properties
 ###
 OUTsave = False         # Save output validation responses for analyses 
-nEpisodesOut = 2000     # No. training batches
+nEpisodesTran = 1000     # No. training batches for transfer learning
 nTransferRuns = 1       # No. instances of transfer learning per learned hidden network
-N_check = 50            # No. validation checks throughout training
 eta_out = 0.01             # Learning rate for ESN-OUT/MET-OUT weights
 
 ###
 ### Feedforward properties
 ###
-Ns = [N_esn, 200, 200, 50, nClass] # No. neurons in each layer
+Ns = [N_esn, 100, nClass] # No. neurons in each layer
 
 ###
 ### Readout and save properties
 ###
 outsPerTime = True # Specifiy whether use a readout weight per time point per class (True)
                     # or just one weight per class (False)
-reportTime = 500 # Real time Accuracy/Loss report every reportTime time steps
-saveLayers = [1, 2] # Save responses from these layers
+reportTime = 250 # Real time Accuracy/Loss report every reportTime time steps
+saveLayers = [1] # Save responses from these layers
 saveRespAtN = [] # Save response at these time points
-nSaveMaxT = nEpochs #5000 # Save responses up to this iteration
+nSaveMaxT = nEpisodes #5000 # Save responses up to this iteration
 nSaveSamples = 20 # No. samples to save per class
 saveFlag_RESP = True # Save responses
 saveFlag_FBWeights = False if not fbLayer else True # Save feedback weights
